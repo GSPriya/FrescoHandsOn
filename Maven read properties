@@ -1,0 +1,57 @@
+<project xmlns = "http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://maven.apache.org/POM/4.0.0
+   http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.fresco.play</groupId>
+  <artifactId>maven-properties</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <properties>
+  <mymotto>My motto is MAVEN is HEAVEN</mymotto>
+  </properties>
+  <dependencies>
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+</dependency>
+  </dependencies>
+  <build>
+  <plugins>
+
+    <plugin>
+
+     <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+     <configuration>
+            <!-- put your configurations here -->
+          </configuration>
+            </plugin>
+   <plugin>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>run</goal>
+            </goals>
+            <configuration>
+            <tasks>
+                    <echo>1.Value from pom.xml:[GroupID]-${project.groupId}</echo>
+
+                    <echo>2.Value from settings.xml:[LocalRepository]-${settings.localRepository}</echo>
+
+                    <echo>3.Value from environment variables:[JAVA_HOME]-${env.JAVA_HOME}</echo>
+<echo>4.Value from OS Settings:[OS Name]-${os.name}</echo>
+                    <echo>5.Value from Project property:[mymotto]-${mymotto}</echo>
+                </tasks>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
+</plugins>
+</build>
+ <!-- Insert your configurations here-->
+</project>
