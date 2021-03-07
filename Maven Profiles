@@ -73,7 +73,7 @@
 
     </profiles>
 <build>
-<finalName>maven-${env}-profile</finalName>
+<finalName>maven-${db.env}-profile</finalName>
   <plugins>
 
     <plugin>
